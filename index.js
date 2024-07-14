@@ -29,7 +29,7 @@ app.use(cors())
 app.use('/api/v1',[component,country,role,agent,user,job_order,news_event,register])
 app.use(errorHandler)
 app.use(notFound)
-app.use(express.static(path.join(process.cwd(), '../')));
+app.use(express.static(path.join(process.cwd(), '../public')));
 
 
 
