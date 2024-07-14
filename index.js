@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 const cors = require('cors')
+const path = require('path')
+
 
 
 const component = require('./routes/form-component')
@@ -27,6 +29,8 @@ app.use(cors())
 app.use('/api/v1',[component,country,role,agent,user,job_order,news_event,register])
 app.use(errorHandler)
 app.use(notFound)
+app.use(express.static(path.join(__dirname, './public')));
+
 
 const start = async()=>{
     try {
